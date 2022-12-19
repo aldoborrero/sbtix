@@ -5,4 +5,4 @@ resolvers += Resolver.typesafeIvyRepo("releases")
 
 // addSbtPlugin("se.nullable.sbtix" % "sbtix" % "0.2-SNAPSHOT")
 
-addSbtPlugin("com.jsuereth" % "sbt-pgp" % "1.1.1")
+// addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.2.1")
