@@ -25,7 +25,9 @@ in {
       just # https://github.com/casey/just
     ];
     commands = with pkgs; [
-      (dev sbt)
+      (dev jetbrains.idea-ultimate)
+      # (dev sbt)
+      (dev sbt-extras)
       (dev scala)
 
       (util just)
