@@ -1,3 +1,4 @@
+addSbtPlugin("io.get-coursier" % "sbt-coursier" % "2.0.14")
 
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.0")
 

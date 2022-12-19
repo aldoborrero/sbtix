@@ -4,13 +4,13 @@ name := "sbtix"
 organization := "se.nullable.sbtix"
 version := "0.2-SNAPSHOT"
 
-publishTo := Some(
-  if (isSnapshot.value) {
-    Opts.resolver.sonatypeSnapshots
-  } else {
-    Opts.resolver.sonatypeStaging
-  }
-)
+// publishTo := Some(
+//   if (isSnapshot.value) {
+//     Opts.resolver.sonatypeSnapshots
+//   } else {
+//     Opts.resolver.sonatypeStaging
+//   }
+// )
 
 licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
 homepage := Some(url("https://gitlab.com/teozkr/Sbtix"))
@@ -39,13 +39,13 @@ developers := List(
 // See https://github.com/sbt/sbt-pgp/issues/126
 // pgpSecretRing := pgpPublicRing.value
 
-addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.3")
-enablePlugins(SbtPlugin)
+// addSbtPlugin("io.get-coursier" % "sbt-coursier" % "2.0.14")
+// enablePlugins(SbtPlugin)
 
-scriptedLaunchOpts ++= Seq(
-  s"-Dplugin.version=${version.value}"
-)
-scriptedBufferLog := false
+// scriptedLaunchOpts ++= Seq(
+//   s"-Dplugin.version=${version.value}"
+// )
+// scriptedBufferLog := false
 
 publishMavenStyle := false
 
@@ -61,4 +61,4 @@ Compile / unmanagedResourceDirectories += baseDirectory.value / "nix-exprs"
 
 scalafmtOnCompile := true
 
-libraryDependencies += "com.slamdata" %% "matryoshka-core" % "0.18.3"
+libraryDependencies += "com.slamdata" %% "matryoshka-core" % "0.21.3"
