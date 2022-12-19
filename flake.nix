@@ -53,5 +53,8 @@
     # generic shell:  nix develop
     # specific shell: nix develop .#<devShells.${system}.default>
     devShells = import ./devshell.nix {inherit inputs pkgs;};
+
+    # nix flake check
+    checks = {inherit treefmt;};
   }));
 }
