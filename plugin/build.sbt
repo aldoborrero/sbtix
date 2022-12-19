@@ -40,12 +40,13 @@ developers := List(
 // pgpSecretRing := pgpPublicRing.value
 
 // addSbtPlugin("io.get-coursier" % "sbt-coursier" % "2.0.14")
-// enablePlugins(SbtPlugin)
 
-// scriptedLaunchOpts ++= Seq(
-//   s"-Dplugin.version=${version.value}"
-// )
-// scriptedBufferLog := false
+enablePlugins(SbtPlugin)
+
+scriptedLaunchOpts ++= Seq(
+  s"-Dplugin.version=${version.value}"
+)
+scriptedBufferLog := false
 
 publishMavenStyle := false
 
@@ -61,4 +62,13 @@ Compile / unmanagedResourceDirectories += baseDirectory.value / "nix-exprs"
 
 scalafmtOnCompile := true
 
+// TODO: See how to re-use same principles
 libraryDependencies += "com.slamdata" %% "matryoshka-core" % "0.21.3"
+libraryDependencies += "org.scalaz" %% "scalaz-concurrent" % "7.2.35"
+
+// Coursier low-level api
+libraryDependencies += "io.get-coursier" %% "coursier-core" % "2.0.13"
+libraryDependencies += "io.get-coursier" %% "coursier-cache" % "2.0.13"
+
+// Coursier api
+// libraryDependencies += "io.get-coursier" %% "coursier" % "2.0.13"

@@ -1,6 +1,6 @@
 package se.nullable.sbtix
 
-import coursier.CoursierPlugin
+// import coursier.CoursierPlugin
 import sbt.Keys._
 import sbt._
 
@@ -36,7 +36,8 @@ object NixPlugin extends AutoPlugin {
         sbtVersion.value,
         depends,
         genNixResolvers,
-        CoursierPlugin.autoImport.coursierCredentials.value.toSet
+        // TODO: See how to import the credentials
+        Set() // CoursierPlugin.autoImport.coursierCredentials.value.toSet
       )
     }
 
@@ -129,7 +130,7 @@ object NixPlugin extends AutoPlugin {
       state
     }
 
-  override def requires: Plugins = CoursierPlugin
+  // override def requires: Plugins = CoursierPlugin
 
   override def trigger: PluginTrigger = allRequirements
 
