@@ -1,14 +1,43 @@
+# --------
+# Intellij
+# --------
 .idea
 *.iml
-target
-result
-tests/**/repo.nix
-tests/*/repo.nix
-.ensime_cache
-.ensime
+
+# -----
+# Scala
+# -----
+*.class
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# -----
+# Scala
+# -----
 .bloop
 .bsp
+.ensime
+.ensime_cache
 .metals
 metals.sbt
+target
 
+# ------
+# direnv
+# ------
+.direnv/
+
+# ------
+# Nix
+# ------
+/result*
+tests/**/repo.nix
+tests/*/repo.nix
 tests/template-generation/default.nix
+
+# ------
+# .envrc
+# ------
+.envrc.local
