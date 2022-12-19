@@ -16,6 +16,7 @@
   pkgWithCategory = category: package: {inherit package category;};
 
   # devshell categories
+  dev = pkgWithCategory "dev";
   util = pkgWithCategory "utils";
 in {
   default = devshell.mkShell {
@@ -23,8 +24,11 @@ in {
     packages = with pkgs; [
       just # https://github.com/casey/just
     ];
-    commands = [
-      (util pkgs.just)
+    commands = with pkgs; [
+      (dev sbt)
+      (dev scala)
+
+      (util just)
     ];
   };
 }
